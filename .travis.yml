@@ -25,17 +25,15 @@ script:
   - if [ "x$JDK" == "xdefault" ]; then ant checkstyle; fi
   - if [ "x$JDK" == "xdefault" ]; then ant dist; fi
 
+os: linux
+
 jobs:
     include:
         - env: JDK=default
-          os: linux
         - env: JDK=11
-          os: linux
-        - env: JDK=11
-          os: linux
-          arch: arm64
         - env: JDK=ea
-          os: linux
+        - env: JDK=11
+          arch: arm64
         - env: JDK=11
           os: osx
  
