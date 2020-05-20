@@ -30,7 +30,7 @@ os:
 
 env: JDK=default
 
-jobs:
+matrix:
     include:
         - env: JDK=11
           os: linux
