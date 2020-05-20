@@ -2,6 +2,9 @@ dist: trusty
 
 language: java
 
+git:
+  depth: false
+
 install:
   - if [ "${TRAVIS_CPU_ARCH}" == "arm64" ]; then 
       sudo apt-get -m install openjdk-11-jdk libltdl-dev;
@@ -24,11 +27,10 @@ script:
 
 os:
   - linux
-  - osx
 
 env: JDK=default
 
-matrix:
+jobs:
     include:
         - env: JDK=11
           os: linux
@@ -39,6 +41,4 @@ matrix:
           os: linux
         - env: JDK=11
           os: osx
-    exclude:
-        - env: JDK=default
-          os: osx
+ 
